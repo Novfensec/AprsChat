@@ -7,6 +7,8 @@ from Model.login_screen import LoginScreenModel
 from Controller.login_screen import LoginScreenController
 from Model.settings_screen import SettingsScreenModel
 from Controller.settings_screen import SettingsScreenController
+from Model.chat_screen import ChatScreenModel
+from Controller.chat_screen import ChatScreenController
 
 screens = {
     'settings screen': {
@@ -20,5 +22,9 @@ screens = {
     'login screen': {
         'model': LoginScreenModel,
         'controller': LoginScreenController,
+    },
+    'chat screen': {
+        'model': ChatScreenModel,
+        'controller': ChatScreenController,
     },
 }
