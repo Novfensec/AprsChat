@@ -11,10 +11,6 @@ from Model.chat_screen import ChatScreenModel
 from Controller.chat_screen import ChatScreenController
 
 screens = {
-    'settings screen': {
-        'model': SettingsScreenModel,
-        'controller': SettingsScreenController,
-    },
     'home screen': {
         'model': HomeScreenModel,
         'controller': HomeScreenController,
@@ -26,5 +22,9 @@ screens = {
     'chat screen': {
         'model': ChatScreenModel,
         'controller': ChatScreenController,
+    },
+    'settings screen': {
+        'model': SettingsScreenModel,
+        'controller': SettingsScreenController,
     },
 }
