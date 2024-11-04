@@ -9,6 +9,8 @@ set DEBUG=1 && python main.py
 """
 
 import importlib
+
+import registers
 import os
 
 from kivy import Config
@@ -31,13 +33,9 @@ import webbrowser
 from kivymd.tools.hotreload.app import MDApp
 from kivymd.uix.screenmanager import MDScreenManager
 from kivymd.uix.transition import MDSharedAxisTransition as SAT
-from kvdeveloper.config import IMAGE_LIBRARY
 from kivy.clock import Clock
 
 Clock.max_iteration = 30
-
-Window.keyboard_anim_args={"d": .2, "t": "in_out_expo"}
-Window.softinput_mode = "below_target"
 
 class UI(MDScreenManager):
     def __init__(self, *args, **kwargs):
@@ -46,12 +44,13 @@ class UI(MDScreenManager):
 
 class AprsChat(MDApp):
     DEBUG = True
-    KV_DIRS = [os.path.join(os.getcwd(), "View")]
+    KV_DIRS = [
+        os.path.join(os.getcwd(), "View"),
+    ]
     
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.theme_cls.primary_palette = "Midnightblue"
-        self.image_library_path = IMAGE_LIBRARY
         self.apply_styles("Light")
 
     def build_app(self) -> UI:
@@ -91,6 +90,16 @@ class AprsChat(MDApp):
         if "meta" in modifiers or "ctrl" in modifiers and text == "r":
             self.rebuild()
 
+    def referrer(self, destination: str = None) -> None:
+        if not destination:
+            if self.manager_screens.current != "home screen":
+                self.manager_screens.current = self.last_used_screen
+            else:
+                self.stop()
+        else:
+            if self.manager_screens.current != destination:
+                self.manager_screens.current = destination
+
     def web_open(self, url: str) -> None:
         webbrowser.open_new_tab(url)
 
@@ -118,7 +127,6 @@ if __name__ == '__main__':
 # from kivymd.uix.screenmanager import MDScreenManager
 # from kivymd.uix.transition import MDSharedAxisTransition as SAT
 # from kivymd.utils.set_bars_colors import set_bars_colors
-# from kvdeveloper.config import IMAGE_LIBRARY
 
 # from kivy.clock import Clock
 
@@ -136,10 +144,6 @@ if __name__ == '__main__':
 
 # from kivy.core.window import Window
 
-# # Place the application window on the right side of the computer screen.
-# Window.top = 30
-# Window.left = resolution[0] - Window.width
-
 # Window.keyboard_anim_args = {"d": .2, "t": "in_out_expo"}
 # Window.softinput_mode = "below_target"
 
@@ -153,7 +157,6 @@ if __name__ == '__main__':
 #         super().__init__(**kwargs)
 #         self.load_all_kv_files(self.directory)
 #         self.theme_cls.primary_palette = "Midnightblue"
-#         self.image_library_path = IMAGE_LIBRARY
 #         self.apply_styles("Light")
 #         # This is the screen manager that will contain all the screens of your application.
 #         self.manager_screens = UI()

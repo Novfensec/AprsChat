@@ -8,3 +8,9 @@ class SettingsScreenView(BaseScreenView):
         The view in this method tracks these changes and updates the UI
         according to these changes.
         """
+
+    def on_enter(self) -> None:
+        self.app.current_screen = self.name
+
+    def on_leave(self) -> None:
+        self.app.last_used_screen = self.name
