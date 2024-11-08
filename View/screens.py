@@ -3,8 +3,6 @@
 
 from Model.home_screen import HomeScreenModel
 from Controller.home_screen import HomeScreenController
-from Model.login_screen import LoginScreenModel
-from Controller.login_screen import LoginScreenController
 from Model.settings_screen import SettingsScreenModel
 from Controller.settings_screen import SettingsScreenController
 from Model.chat_screen import ChatScreenModel
@@ -14,10 +12,6 @@ screens = {
     'home screen': {
         'model': HomeScreenModel,
         'controller': HomeScreenController,
-    },
-    'login screen': {
-        'model': LoginScreenModel,
-        'controller': LoginScreenController,
     },
     'chat screen': {
         'model': ChatScreenModel,
