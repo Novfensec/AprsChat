@@ -5,10 +5,10 @@
     md_bg_color: app.theme_cls.backgroundColor
 
 <DrawerClickableItem>:
-    md_bg_color: app.theme_cls.primaryContainerColor
-    ripple_color: app.theme_cls.inversePrimaryColor
-    inactive_indicator_color: app.theme_cls.primaryContainerColor
-    active_indicator_color: app.theme_cls.inversePrimaryColor
+    md_bg_color: app.theme_cls.transparentColor
+    ripple_color: app.theme_cls.surfaceContainerHighestColor
+    inactive_indicator_color: app.theme_cls.transparentColor
+    active_indicator_color: app.theme_cls.surfaceContainerHighestColor
     
     MDNavigationDrawerItemLeadingIcon:
         icon: root.icon
@@ -85,7 +85,7 @@
     MDTextFieldHintText:
         text: root.hint_text
         theme_text_color: "Custom"
-        text_color_normal: 0, 0, 0, 0.6
+        text_color_normal: app.theme_cls.outlineColor
 
     MDTextFieldHelperText:
         text: root.helper_text

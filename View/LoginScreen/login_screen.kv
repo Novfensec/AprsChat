@@ -59,10 +59,10 @@
             height: avatar.height
 
             FitImage:
-                id:avatar
-                source:f"assets/images/basic/login_illustration400.png"
+                id: avatar
+                source: f"assets/images/basic/login_illustration400.png"
                 size_hint: None, None
-                size: "200dp","145dp"
+                size: "215dp","145dp"
 
     MDBoxLayout:
     	orientation: 'vertical'
@@ -149,10 +149,10 @@
                 MDIconButton:
                     icon: "github"
                     size_hint: 1, 1
-                    theme_icon_color:"Custom"
-                    icon_color:"black"
-                    theme_font_size:"Custom"
-                    font_size:"51sp"
+                    theme_icon_color: "Custom"
+                    icon_color: app.theme_cls.onSurfaceColor
+                    theme_font_size: "Custom"
+                    font_size: "51sp"
 
 <SignupSubScreen@MDScreen>:
 	manager_screens: None
@@ -216,7 +216,6 @@
         CustomTextField:
             icon_left: "email"
             hint_text: "Email Address"
-            email: True
 
         CustomTextField:
             icon_left: "lock"
@@ -300,6 +299,6 @@
                     icon: "github"
                     size_hint: 1, 1
                     theme_icon_color: "Custom"
-                    icon_color: "black"
+                    icon_color: app.theme_cls.onSurfaceColor
                     theme_font_size: "Custom"
                     font_size: "51sp"

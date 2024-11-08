@@ -185,11 +185,11 @@ if __name__ == '__main__':
 #             view.name = name_screen
 #             self.manager_screens.add_widget(view)
 
-#     def set_bars_colors(self) -> None:
+#     def set_bars_colors(self, style: str = "Light") -> None:
 #         set_bars_colors(
 #             self.theme_cls.primaryColor,  # status bar color
 #             self.theme_cls.primaryColor,  # navigation bar color
-#             "Light",                       # icons color of status bar
+#             style,                       # icons color of status bar
 #         )
 
 #     def apply_styles(self, style: str = "Light") -> None:

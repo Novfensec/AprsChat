@@ -24,3 +24,18 @@ class HomeScreenController:
 
     def get_view(self) -> View.HomeScreen.home_screen:
         return self.view
+    
+    def set_data_validation_status(self, user: str = None, *args) -> None:
+        self.model.data_validation_status = True
+        self.model.UserChatsData = [
+            {
+                "username": "Novfenesec"
+            },
+            {
+                "username": "Hemna"
+            },
+        ]
+        """
+        Render the data using requests and make changes to the HomeScreenModel.
+        """
+        self.model.notify_observers("home screen")
