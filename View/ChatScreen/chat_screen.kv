@@ -1,1 +1,25 @@
-<ChatScreenView>
+<ChatScreenView>:
+    MDStackLayout:
+        size_hint: 1, 1 
+        spacing: "10dp"
+
+        MDBoxLayout:
+            orientation: 'vertical'
+            adaptive_height: True
+            padding: 10
+
+            CustomIconButton:
+                icon:  "arrow-left"
+				on_press:
+					app.referrer()
+
+        MDBoxLayout:
+            orientation: 'vertical'
+            adaptive_height: True
+            padding: 10
+
+            MDLabel:
+                text: app.current_chatuser
+                font_style: "Display"
+                role: "small"
+                halign : "center"

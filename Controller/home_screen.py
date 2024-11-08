@@ -28,7 +28,7 @@ class HomeScreenController:
     def set_data_validation_status(self, *args) -> None:
         self.model.data_validation_status = True
         self.model.UserChatsData = [
-            {"username": "Novfenesec"},
+            {"username": "Novfensec"},
             {"username": "Hemna"},
         ]
         """

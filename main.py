@@ -53,6 +53,7 @@ class AprsChat(MDApp):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.theme_cls.primary_palette = "Midnightblue"
+        self.current_chatuser = ""
         self.apply_styles("Light")
 
     def build_app(self) -> UI:
