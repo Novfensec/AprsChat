@@ -8,8 +8,6 @@ import View.SettingsScreen.settings_screen
 importlib.reload(View.SettingsScreen.settings_screen)
 
 
-
-
 class SettingsScreenController:
     """
     The `SettingsScreenController` class represents a controller implementation.
@@ -20,7 +18,9 @@ class SettingsScreenController:
 
     def __init__(self, model):
         self.model = model  # Model.settings_screen.SettingsScreenModel
-        self.view = View.SettingsScreen.settings_screen.SettingsScreenView(controller=self, model=self.model)
+        self.view = View.SettingsScreen.settings_screen.SettingsScreenView(
+            controller=self, model=self.model
+        )
 
     def get_view(self) -> View.SettingsScreen.settings_screen:
         return self.view

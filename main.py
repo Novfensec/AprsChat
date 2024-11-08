@@ -27,7 +27,7 @@ resolution = ImageGrab.grab().size
 
 # Place the application window on the right side of the computer screen.
 Window.top = 28
-Window.left = resolution[0] - Window.width +3
+Window.left = resolution[0] - Window.width + 3
 
 import webbrowser
 from kivymd.tools.hotreload.app import MDApp
@@ -37,17 +37,19 @@ from kivy.clock import Clock
 
 Clock.max_iteration = 30
 
+
 class UI(MDScreenManager):
     def __init__(self, *args, **kwargs):
         super(UI, self).__init__(*args, **kwargs)
         self.transition = SAT()
+
 
 class AprsChat(MDApp):
     DEBUG = True
     KV_DIRS = [
         os.path.join(os.getcwd(), "View"),
     ]
-    
+
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.theme_cls.primary_palette = "Midnightblue"
@@ -62,7 +64,7 @@ class AprsChat(MDApp):
         import View.screens
 
         self.manager_screens = UI()
-        Window.bind(on_key_down = self.on_keyboard_down)
+        Window.bind(on_key_down=self.on_keyboard_down)
         importlib.reload(View.screens)
         screens = View.screens.screens
 
@@ -73,12 +75,12 @@ class AprsChat(MDApp):
             view.manager_screens = self.manager_screens
             view.name = name_screen
             self.manager_screens.add_widget(view)
-            
+
         return self.manager_screens
 
     def apply_styles(self, style: str = "Light") -> None:
         self.theme_cls.theme_style = style
-        
+
     def on_keyboard_down(self, window, keyboard, keycode, text, modifiers) -> None:
         """
         The method handles keyboard events.
@@ -103,7 +105,8 @@ class AprsChat(MDApp):
     def web_open(self, url: str) -> None:
         webbrowser.open_new_tab(url)
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     AprsChat().run()
 
 # After you finish the project, remove the above code and uncomment the below
@@ -111,18 +114,18 @@ if __name__ == '__main__':
 
 # """
 # The entry point to the application.
-# 
+#
 # The application uses the MVC template. Adhering to the principles of clean
 # architecture means ensuring that your application is easy to test, maintain,
 # and modernize.
-# 
+#
 # You can read more about this template at the links below:
-# 
+#
 # https://github.com/HeaTTheatR/LoginAppMVC
 # https://en.wikipedia.org/wiki/Model–view–controller
 # """
-# 
-# import webbrowser 
+#
+# import webbrowser
 # from kivymd.app import MDApp
 # from kivymd.uix.screenmanager import MDScreenManager
 # from kivymd.uix.transition import MDSharedAxisTransition as SAT
@@ -160,7 +163,7 @@ if __name__ == '__main__':
 #         self.apply_styles("Light")
 #         # This is the screen manager that will contain all the screens of your application.
 #         self.manager_screens = UI()
-        
+
 #     def build(self) -> UI:
 #         self.generate_application_screens()
 #         self.set_bars_colors()
@@ -194,7 +197,7 @@ if __name__ == '__main__':
 
 #     def apply_styles(self, style: str = "Light") -> None:
 #         self.theme_cls.theme_style = style
-        
+
 #     def web_open(self, url: str) -> None:
 #         webbrowser.open_new_tab(url)
 

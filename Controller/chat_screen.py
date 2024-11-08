@@ -8,8 +8,6 @@ import View.ChatScreen.chat_screen
 importlib.reload(View.ChatScreen.chat_screen)
 
 
-
-
 class ChatScreenController:
     """
     The `ChatScreenController` class represents a controller implementation.
@@ -20,7 +18,9 @@ class ChatScreenController:
 
     def __init__(self, model):
         self.model = model  # Model.chat_screen.ChatScreenModel
-        self.view = View.ChatScreen.chat_screen.ChatScreenView(controller=self, model=self.model)
+        self.view = View.ChatScreen.chat_screen.ChatScreenView(
+            controller=self, model=self.model
+        )
 
     def get_view(self) -> View.ChatScreen.chat_screen:
         return self.view

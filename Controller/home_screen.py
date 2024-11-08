@@ -8,8 +8,6 @@ import View.HomeScreen.home_screen
 importlib.reload(View.HomeScreen.home_screen)
 
 
-
-
 class HomeScreenController:
     """
     The `HomeScreenController` class represents a controller implementation.
@@ -20,20 +18,18 @@ class HomeScreenController:
 
     def __init__(self, model):
         self.model = model  # Model.home_screen.HomeScreenModel
-        self.view = View.HomeScreen.home_screen.HomeScreenView(controller=self, model=self.model)
+        self.view = View.HomeScreen.home_screen.HomeScreenView(
+            controller=self, model=self.model
+        )
 
     def get_view(self) -> View.HomeScreen.home_screen:
         return self.view
-    
-    def set_data_validation_status(self, user: str = None, *args) -> None:
+
+    def set_data_validation_status(self, *args) -> None:
         self.model.data_validation_status = True
         self.model.UserChatsData = [
-            {
-                "username": "Novfenesec"
-            },
-            {
-                "username": "Hemna"
-            },
+            {"username": "Novfenesec"},
+            {"username": "Hemna"},
         ]
         """
         Render the data using requests and make changes to the HomeScreenModel.

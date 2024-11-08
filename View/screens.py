@@ -11,20 +11,20 @@ from Model.chat_screen import ChatScreenModel
 from Controller.chat_screen import ChatScreenController
 
 screens = {
-    'home screen': {
-        'model': HomeScreenModel,
-        'controller': HomeScreenController,
+    "home screen": {
+        "model": HomeScreenModel,
+        "controller": HomeScreenController,
     },
-    'login screen': {
-        'model': LoginScreenModel,
-        'controller': LoginScreenController,
+    "login screen": {
+        "model": LoginScreenModel,
+        "controller": LoginScreenController,
     },
-    'chat screen': {
-        'model': ChatScreenModel,
-        'controller': ChatScreenController,
+    "chat screen": {
+        "model": ChatScreenModel,
+        "controller": ChatScreenController,
     },
-    'settings screen': {
-        'model': SettingsScreenModel,
-        'controller': SettingsScreenController,
+    "settings screen": {
+        "model": SettingsScreenModel,
+        "controller": SettingsScreenController,
     },
 }
