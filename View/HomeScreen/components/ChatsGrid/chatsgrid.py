@@ -8,7 +8,6 @@ class ChatsGrid(ResponsiveGrid):
         self.clear_widgets()
 
     def add_cards(self, data: list, *args) -> None:
-        print(data)
         self.clear_widgets()
         for userdata in data:
             self.add_widget(ChatsCard(chatusername=userdata["username"]))
